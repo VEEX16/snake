@@ -16,7 +16,11 @@ function Snake() {
 
     ctx.fillRect(this.x, this.y, scale, scale);
   }
-
+  window.addEventListener('keydown', ((evt) => { //pausa
+    if (evt.key == "p") {
+      this.xSpeed = 0;
+    }
+  }));
   this.update = function () {
     for (let i = 0; i < this.tail.length - 1; i++) {
       this.tail[i] = this.tail[i + 1];

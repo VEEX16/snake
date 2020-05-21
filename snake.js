@@ -29,14 +29,18 @@ function Snake() {
 
 
   this.update = function () {
-    for (let i = 0; i < this.tail.length - 1; i++) {
-      this.tail[i] = this.tail[i + 1];
+    if (!this.pause) {
+      for (let i = 0; i < this.tail.length - 1; i++) {
+        this.tail[i] = this.tail[i + 1];
+      }
     }
 
-    this.tail[this.total - 1] = {
-      x: this.x,
-      y: this.y
-    };
+    if (!this.pause) {
+      this.tail[this.total - 1] = {
+        x: this.x,
+        y: this.y
+      };
+    }
 
     this.x += this.xSpeed;
     this.y += this.ySpeed;

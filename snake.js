@@ -6,6 +6,7 @@ function Snake() {
   this.total = 0;
   this.tail = [];
   this.highscore = 0;
+  this.pause = false;
 
   this.draw = function () {
     ctx.fillStyle = "#167a2a";
@@ -16,11 +17,17 @@ function Snake() {
 
     ctx.fillRect(this.x, this.y, scale, scale);
   }
+
+
   window.addEventListener('keydown', ((evt) => { //pausa
     if (evt.key == "p") {
+      this.pause = true;
       this.xSpeed = 0;
+      this.ySpeed = 0;
     }
   }));
+
+
   this.update = function () {
     for (let i = 0; i < this.tail.length - 1; i++) {
       this.tail[i] = this.tail[i + 1];
@@ -60,21 +67,25 @@ function Snake() {
         if (this.xSpeed == 0 && this.ySpeed == scale * 1) break;
         this.xSpeed = 0;
         this.ySpeed = -scale * 1;
+        this.pause = false;
         break;
       case 'Down':
         if (this.xSpeed == 0 && this.ySpeed == -scale * 1) break;
         this.xSpeed = 0;
         this.ySpeed = scale * 1;
+        this.pause = false;
         break;
       case 'Left':
         if (this.xSpeed == scale * 1 && this.ySpeed == 0) break;
         this.xSpeed = -scale * 1;
         this.ySpeed = 0;
+        this.pause = false;
         break;
       case 'Right':
         if (this.xSpeed == -scale * 1 && this.ySpeed == 0) break;
         this.xSpeed = scale * 1;
         this.ySpeed = 0;
+        this.pause = false;
         break;
     }
   }

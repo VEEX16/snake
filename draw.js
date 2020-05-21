@@ -24,7 +24,8 @@ let snakeSpeed = 100;
       fruit.pickLocation(snake.tail);
     }
 
-    snake.checkCollision();
+    if (!snake.pause) snake.checkCollision();
+
     document.querySelector('.score')
       .innerText = "Zdobyte punkty " + snake.total;
     document.querySelector('.highscore')

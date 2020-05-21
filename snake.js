@@ -37,7 +37,6 @@ function Snake() {
     }
 
     if (this.y > canvas.height - 40) {
-      dasds
       this.lose();
     }
 

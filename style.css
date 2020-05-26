@@ -1,0 +1,8 @@
+.container {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.container h1 {
+    text-align: center;
+}

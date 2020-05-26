@@ -1,10 +1,14 @@
 function Snake() {
   this.x = 960;
   this.y = 400;
+  //pozycja startowa węża
   this.xSpeed = scale * 1;
   this.ySpeed = 0;
+  //prędkość węża
   this.total = 0;
+  //ilość zdobytych punktów
   this.tail = [];
+  //wielkość ogonu
   this.highscore = 0;
   this.pause = false;
 
@@ -19,11 +23,12 @@ function Snake() {
   }
 
 
-  window.addEventListener('keydown', ((evt) => { //pausa
+  window.addEventListener('keydown', ((evt) => {
     if (evt.key == "p") {
       this.pause = true;
       this.xSpeed = 0;
       this.ySpeed = 0;
+      //w przypadku wybrania "p"- przerwa w grze
     }
   }));
 
@@ -66,6 +71,7 @@ function Snake() {
 
   // Zmiana kierunku węża po wciśnięciu przycisku
   this.changeDirection = function (direction) {
+    //zmiania kierunku przemieszczania się węża
     switch (direction) {
       case 'Up':
         if (this.xSpeed == 0 && this.ySpeed == scale * 1) break;
@@ -93,7 +99,7 @@ function Snake() {
         break;
     }
   }
-
+  //działanie w przypadku zdobycia punktu
   this.eat = function (fruit) {
     if (this.x === fruit.x &&
       this.y === fruit.y) {
@@ -104,7 +110,7 @@ function Snake() {
 
     return false;
   }
-
+  //funkcja sprawdzająca zderzenie węża z samym sobą
   this.checkCollision = function () {
     for (var i = 0; i < this.tail.length; i++) {
       if (this.x === this.tail[i].x &&
@@ -113,11 +119,25 @@ function Snake() {
       }
     }
   }
-
+  //zmiana ustawień parametrów na wartości domyślne w przypadku przegranej
   this.lose = function () {
     this.total = 0;
     this.tail = [];
     this.x = 960;
     this.y = 400;
+    // FileSave("cos", "cos.txt");
   }
+
+  // function FileSave(sourceText, fileIdentity) {
+  //   var workElement = document.createElement("a");
+  //   if ('download' in workElement) {
+  //     workElement.href = "data:" + 'text/plain' + "charset=utf-8," + escape(sourceText);
+  //     workElement.setAttribute("download", fileIdentity);
+  //     document.body.appendChild(workElement);
+  //     var eventMouse = document.createEvent("MouseEvents");
+  //     eventMouse.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+  //     workElement.dispatchEvent(eventMouse);
+  //     document.body.removeChild(workElement);
+  //   } else throw 'File saving not supported for this browser';
+  // }
 }

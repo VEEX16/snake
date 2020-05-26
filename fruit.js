@@ -4,10 +4,11 @@ function Fruit() {
   let a;
   let b;
 
-  // Losowe pojawianie się owocu
+  //Pojawianie się owocu
   this.pickLocation = function (tail) {
     this.x = (Math.floor(Math.random() * (columns - 3)) + 2) * scale;
     this.y = (Math.floor(Math.random() * (rows - 3)) + 2) * scale;
+    //ustalanie współrzędnych za pomocą losowania
   }
 
 

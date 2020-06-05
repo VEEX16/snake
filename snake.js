@@ -14,6 +14,8 @@ function Snake() {
   this.start = true;
   let soundEffect;
   soundEffect = new Audio("audio/damage_effect.mp3");
+  let soundEffect1;
+  soundEffect1 = new Audio("audio/soundtrack.mp3");
 
   this.draw = function () {
     ctx.fillStyle = "#167a2a";
@@ -87,6 +89,7 @@ function Snake() {
         this.ySpeed = -scale * 1;
         this.pause = false;
         this.start = false;
+        soundEffect1.play();
         break;
       case 'Down':
         if (this.xSpeed == 0 && this.ySpeed == -scale * 1) break;
@@ -94,6 +97,7 @@ function Snake() {
         this.ySpeed = scale * 1;
         this.pause = false;
         this.start = false;
+        soundEffect1.play();
         break;
       case 'Left':
         if (this.xSpeed == scale * 1 && this.ySpeed == 0) break;
@@ -101,6 +105,7 @@ function Snake() {
         this.ySpeed = 0;
         this.pause = false;
         this.start = false;
+        soundEffect1.play();
         break;
       case 'Right':
         if (this.xSpeed == -scale * 1 && this.ySpeed == 0) break;
@@ -108,6 +113,7 @@ function Snake() {
         this.ySpeed = 0;
         this.pause = false;
         this.start = false;
+        soundEffect1.play();
         break;
     }
   }

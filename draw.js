@@ -6,13 +6,16 @@ const columns = canvas.width / scale;
 //ustalanie parametrów HTML5 canvas
 let snakeSpeed = 100;
 
+
+
+
 (function setup() {
   snake = new Snake();
   fruit = new Fruit();
   background = new Background();
   fruit.pickLocation();
-  //zmiana położenia zdobyczy
 
+  //zmiana położenia zdobyczy
 
   window.setInterval(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);

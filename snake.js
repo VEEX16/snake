@@ -11,6 +11,8 @@ function Snake() {
   //wielkość ogonu
   this.highscore = 0;
   this.pause = false;
+  let soundEffect;
+  soundEffect = new Audio("audio/damage_effect.mp3");
 
   this.draw = function () {
     ctx.fillStyle = "#167a2a";
@@ -125,19 +127,7 @@ function Snake() {
     this.tail = [];
     this.x = 960;
     this.y = 400;
-    // FileSave("cos", "cos.txt");
+    soundEffect.play();
   }
 
-  // function FileSave(sourceText, fileIdentity) {
-  //   var workElement = document.createElement("a");
-  //   if ('download' in workElement) {
-  //     workElement.href = "data:" + 'text/plain' + "charset=utf-8," + escape(sourceText);
-  //     workElement.setAttribute("download", fileIdentity);
-  //     document.body.appendChild(workElement);
-  //     var eventMouse = document.createEvent("MouseEvents");
-  //     eventMouse.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-  //     workElement.dispatchEvent(eventMouse);
-  //     document.body.removeChild(workElement);
-  //   } else throw 'File saving not supported for this browser';
-  // }
 }

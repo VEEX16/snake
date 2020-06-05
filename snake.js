@@ -11,6 +11,7 @@ function Snake() {
   //wielkość ogonu
   this.highscore = 0;
   this.pause = false;
+  this.start = true;
   let soundEffect;
   soundEffect = new Audio("audio/damage_effect.mp3");
 
@@ -48,9 +49,14 @@ function Snake() {
         y: this.y
       };
     }
+    if (this.start == true) {
+      this.x += 0;
+      this.y += 0;
+    } else {
+      this.x += this.xSpeed;
+      this.y += this.ySpeed;
+    }
 
-    this.x += this.xSpeed;
-    this.y += this.ySpeed;
 
 
     // Obsługa uderzenia w ścianę
@@ -80,24 +86,28 @@ function Snake() {
         this.xSpeed = 0;
         this.ySpeed = -scale * 1;
         this.pause = false;
+        this.start = false;
         break;
       case 'Down':
         if (this.xSpeed == 0 && this.ySpeed == -scale * 1) break;
         this.xSpeed = 0;
         this.ySpeed = scale * 1;
         this.pause = false;
+        this.start = false;
         break;
       case 'Left':
         if (this.xSpeed == scale * 1 && this.ySpeed == 0) break;
         this.xSpeed = -scale * 1;
         this.ySpeed = 0;
         this.pause = false;
+        this.start = false;
         break;
       case 'Right':
         if (this.xSpeed == -scale * 1 && this.ySpeed == 0) break;
         this.xSpeed = scale * 1;
         this.ySpeed = 0;
         this.pause = false;
+        this.start = false;
         break;
     }
   }

@@ -5,6 +5,8 @@ const rows = canvas.height / scale;
 const columns = canvas.width / scale;
 //ustalanie parametrów HTML5 canvas
 let snakeSpeed = 100;
+let soundEffect1;
+soundEffect1 = new Audio("audio/soundtrack.mp3");
 
 
 
@@ -16,7 +18,7 @@ let snakeSpeed = 100;
   fruit.pickLocation();
 
   //zmiana położenia zdobyczy
-
+  soundEffect1.play();
   window.setInterval(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     background.draw();

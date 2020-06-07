@@ -1,6 +1,6 @@
 function Snake() {
-  this.x = 960;
-  this.y = 400;
+  this.x = 480;
+  this.y = 220;
   //pozycja startowa węża
   this.xSpeed = scale * 1;
   this.ySpeed = 0;
@@ -33,6 +33,7 @@ function Snake() {
       this.pause = true;
       this.xSpeed = 0;
       this.ySpeed = 0;
+      document.getElementById("info").innerText = "sdfdsdf";
       //w przypadku wybrania "p"- przerwa w grze
     }
   }));
@@ -141,8 +142,8 @@ function Snake() {
   this.lose = function () {
     this.total = 0;
     this.tail = [];
-    this.x = 960;
-    this.y = 400;
+    this.x = 480;
+    this.y = 220;
     soundEffect.play();
   }
 

@@ -3,6 +3,40 @@
     grid-auto-flow: column;
 }
 
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
 .container h1 {
     text-align: center;
+}
+
+.button {
+    background-color: #008CBA;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.level {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-top: 50px;
 }

@@ -3,24 +3,34 @@
 
 <head>
   <title>Snake Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <canvas class="canvas" id="canvas" height="760" width="1900">
+  <div id="level" class="level" style="visibility: visible;">
+    <h2 style="font-size: 72px;">SNAKE</h2>
+    <h1 style="padding-bottom: 30px;">Wybierz poziom trudności</h1>
+    <button class="button" type="button" id="easy">Łatwy</button>
+    <button class="button" type="button" id="medium">Średni</button>
+    <button class="button" type="button" id="hard">Trudny</button>
+
+  </div>
+  <canvas class="canvas" id="canvas" height="500" width="1000">
   </canvas>
-  <h1 class=" score"></h1>
+  <h1 id="info" style="padding-left: 550px;"></h1>
+  <h1 class="score"></h1>
   <h1 class="highscore"></h1>
+  <button class="button" type="button" id="change" style="visibility: hidden;">Zmień poziom trudności</button>
 </body>
 <script type="text/javascript" src="fruit.js"></script>
 <script type="text/javascript" src="snake.js"></script>
 <script type="text/javascript" src="background.js"></script>
 <script type="text/javascript" src="draw.js"></script>
 <script>
-  let myMusic;
-
-  myMusic = new Audio("audio/soundtrack.mp3");
-  myMusic.play();
+  document.getElementById("change").addEventListener("click", (evt) => {
+    location.reload();
+  });
 </script>
 
 
